@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>get_point</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="./example.css">
+	</head>
+
+	<body>
+
+		<div id="container"></div>
+
+		<script type="text/javascript" src="../build/simpleGis.js"></script>
+		<script type="module">
+			let 
+				gis = Gis.createGis({
+					container: document.getElementById('container'),
+					fov: 60,
+					near: 1,
+					far: 100000000,
+					// cameraPosition: new THREE.Vector3(0, -20000000, 10000000),
+					cameraPosition: new THREE.Vector3(0, 0, 10000000),
+				});
+				// .initEarth(),
+			// 	gis = g.getCamera(),
+			// 	gis = g.getScene(),
+			// 	gis = g.getEarth();
+
+			// camera.lookAt(0,0,0);
+
+			// scene.add( new THREE.AxesHelper( 500000000 ) );
+
+			
+
+		</script>
+	</body>
+</html>

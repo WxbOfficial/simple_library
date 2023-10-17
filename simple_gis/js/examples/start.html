@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>start</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="./example.css">
+	</head>
+	<body>
+		<div id="container"></div>
+
+		<script type="text/javascript" src="../build/simpleGis.js"></script>
+		<script type="text/javascript">
+			let
+				gis = Gis.createGis({
+					container: document.getElementById('container'),
+					fov: 60,
+					near: 1,
+					far: 100000000,
+					cameraPosition: new THREE.Vector3(0, 0, 10000000),
+				}).initEarth(),
+
+				camera = gis.getCamera(),
+				scene = gis.getScene(),
+				earth = gis.getEarth();
+
+			camera.lookAt(0,0,0);
+			// earth.setMinLevel(2);
+			scene.add( new THREE.AxesHelper( 10000000 ) );
+
+			window.earth = earth;
+			window.camera = camera;
+			window.scene = scene;
+
+		</script>
+	</body>
+</html>

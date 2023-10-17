@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>index</title>
+		<style type="text/css">
+			html, body{
+				margin: 0;
+				padding: 0;
+				border-width: 0;
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+			html{
+				font-size: 100px;
+				overscroll-behavior-x: contain;
+			}
+			body{
+			  position: relative;
+			  font-size: 0.2rem;
+			}
+
+			#test1{
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 20px;
+				height: 20px;
+				background-color: red;
+			}
+
+			div, svg, pre, textarea, input, iframe, img, p, canvas,
+			h1, h2, h3, h4, h5, h6 {
+			  display: block;
+			  margin: 0;
+			  padding: 0;
+			  border-width: 0;
+			  user-select: none;
+			  box-sizing: border-box;
+			  outline: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="test1"></div>
+		<canvas
+			id="canvas"
+			style="width: 100%; height: 100%;"></canvas>
+		
+		<script type="module">
+			import CanvasDraw from '../src/canvas_draw.js';
+
+			let
+				canvasDom = document.getElementById('canvas'),
+				canvasDraw = new CanvasDraw()
+													.mountDom(canvasDom)
+													.fill();
+
+			canvasDraw.addContainImage('./logo.jpeg');
+
+			window.canvasDraw = canvasDraw;
+		</script> 
+	</body>
+</html>
